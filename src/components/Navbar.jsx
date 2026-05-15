@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useCarritoStore } from "../store/CarritoStore.js";
-import "../styles/navbar.css";
+import "../Styles/navbar.css";
 export const Navbar = () => {
   const totalItems = useCarritoStore((state) => state.getTotalItems());
 
