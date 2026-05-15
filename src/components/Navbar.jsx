@@ -1,20 +1,29 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useCarritoStore } from "../store/CarritoStore.js";
+import "../styles/navbar.css";
 
 export const Navbar = () => {
   const totalItems = useCarritoStore((state) => state.getTotalItems());
 
   return (
-    <nav
-      style={{
-        display: "flex",
-        gap: "20px",
-        padding: "10px",
-        borderBottom: "1px solid #ccc",
-      }}
-    >
-      <Link to="/">Productos</Link>
-      <Link to="/carrito">Carrito ({totalItems})</Link>
+    <nav className="navbar">
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          isActive ? "nav-link active" : "nav-link"
+        }
+      >
+        Productos
+      </NavLink>
+
+      <NavLink
+        to="/carrito"
+        className={({ isActive }) =>
+          isActive ? "nav-link active" : "nav-link"
+        }
+      >
+        Carrito ({totalItems})
+      </NavLink>
     </nav>
   );
 };

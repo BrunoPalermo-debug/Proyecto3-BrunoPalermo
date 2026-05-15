@@ -56,7 +56,7 @@ export const useCarritoStore = create((set, get) => ({
   getTotalPrecio: () => {
     const state = get();
     return state.items.reduce(
-      (accumulator, item) => accumulator + item.precio * item.cantidad,
+      (acc, item) => acc + item.price * item.cantidad,
       0,
     );
   },

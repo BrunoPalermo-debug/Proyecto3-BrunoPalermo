@@ -1,0 +1,48 @@
+.productos-container {
+  padding: 20px;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.producto-card {
+  background: #efe7ff;
+  border: 1px solid #d6c7ff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+}
+
+.producto-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.producto-title {
+  font-size: 16px;
+  color: #5a2ea6;
+  margin-bottom: 10px;
+}
+
+.producto-price {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.producto-btn {
+  background: #6c3bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.producto-btn:hover {
+  background: #4b28b5;
+}

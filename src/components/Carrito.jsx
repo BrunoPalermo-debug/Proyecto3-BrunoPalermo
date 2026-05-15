@@ -1,4 +1,5 @@
 import { useCarritoStore } from "../store/CarritoStore.js";
+import "../Styles/carrito.css";
 
 export const Carrito = () => {
   const items = useCarritoStore((state) => state.items);
@@ -9,29 +10,33 @@ export const Carrito = () => {
   if (items.length === 0) return <p>El carrito está vacío</p>;
 
   return (
-    <div>
+    <div className="carrito-container">
       <h2>Carrito</h2>
 
       {items.map((item) => (
-        <div
-          key={item.id}
-          style={{
-            border: "1px solid #ccc",
-            margin: "10px 0",
-            padding: "10px",
-          }}
-        >
-          <h4>{item.title}</h4>
-          <p>Precio: ${item.price}</p>
-          <p>Cantidad: {item.cantidad}</p>
+        <div key={item.id} className="carrito-item">
+          <img src={item.image} alt={item.title} className="carrito-img" />
 
-          <button onClick={() => eliminarProducto(item.id)}>Eliminar</button>
+          <div className="carrito-info">
+            <h4>{item.title}</h4>
+            <p>Precio: ${item.price}</p>
+            <p>Cantidad: {item.cantidad}</p>
+
+            <button
+              className="carrito-btn"
+              onClick={() => eliminarProducto(item.id)}
+            >
+              Eliminar
+            </button>
+          </div>
         </div>
       ))}
 
-      <h3>Total: ${total}</h3>
+      <div className="carrito-total">Total: ${total}</div>
 
-      <button onClick={vaciarCarrito}>Vaciar carrito</button>
+      <button className="carrito-btn" onClick={vaciarCarrito}>
+        Vaciar carrito
+      </button>
     </div>
   );
 };
