@@ -1,8 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/Proyecto3-BrunoPalermo/",
+  base:
+    process.env.NODE_ENV === "production" ? "/Proyecto3-BrunoPalermo/" : "/",
 });
